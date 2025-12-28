@@ -1,0 +1,34 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    input = sys.stdin.readline\n    n, k = map(int, input().split())\n    time = 240 - k\n    ans = 0\n    start = 1\n    end = 240\n    while start <= end:\n        middle = (start + end) // 2\n        sum = 5 * middle * (middle + 1) // 2\n        if time >= sum:\n            start = middle + 1\n            ans = start\n        else:\n            end = middle - 1\n    if ans > n:\n        ans = n + 1\n    if ans <= 0:\n        ans = 1\n    sys.stdout.write(str(ans - 1) + '\\n')\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      },
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    input = sys.stdin.readline\n    n, k = map(int, input().split())\n    time = 240 - k\n    ans = 0\n    start = 1\n    end = n\n    while start <= end:\n        middle = (start + end) // 2\n        sum = 5 * middle * (middle + 1) // 2\n        if time >= sum:\n            ans = middle\n            start = middle + 1\n        else:\n            end = middle - 1\n    sys.stdout.write(str(ans) + '\\n')\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Java 11",
+    "source_code": "import java.util.Scanner;\npublic class newYearAndHurry\n{\n    /*\n    public static void main(String[] args)\n    {\n        Scanner s1=new Scanner(System.in);\n        int n=s1.nextInt();\n        int k=s1.nextInt();\n        int ans=0;\n        int sum=5;\n        int i=2;\n        while(240-k>=sum)\n        {\n            sum+=5*i;\n            i++;\n            ans++;\n            if(ans> n) \n                ans=n;\n        }\n        System.out.println(ans);\n    }*/\n    public static void main(String[] args)\n    {\n        Scanner s1=new Scanner(System.in);\n        int n=s1.nextInt();\n        int k=s1.nextInt();\n        int time=240-k;\n        int ans=0;\n        int start=1;\n        int end=240;\n        while(start<=end)\n        {   \n            int middle=(start+end)/2;\n            int sum= 5 * (middle) *(middle+1) / 2;\n            if (time>=sum)\n            {\n                //System.out.println(sum);\n                start=middle+1;\n                ans=start;\n            }\n            else\n            {\n                end=middle-1;\n            }\n        }\n        if (ans>n)\n            ans=n+1;\n        if (ans<=0)\n            ans=1;\n        System.out.println(ans-1);\n    }\n\n}",
+    "lang_cluster": "Java",
+    "tags": [
+      "brute force",
+      "math",
+      "implementation",
+      "binary search"
+    ],
+    "code_uid": "e164a90d454299a07fe8e752bc3d4b13",
+    "src_uid": "41e554bc323857be7b8483ee358a35e2",
+    "difficulty": 800.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Python",
+    "hidden_unit_tests": "[{\"input\": \"3 222\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"4 190\\r\\n\", \"output\": [\"4\"]}, {\"input\": \"7 1\\r\\n\", \"output\": [\"7\"]}, {\"input\": \"10 135\\r\\n\", \"output\": [\"6\"]}, {\"input\": \"10 136\\r\\n\", \"output\": [\"5\"]}, {\"input\": \"1 1\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"1 240\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"10 1\\r\\n\", \"output\": [\"9\"]}, {\"input\": \"10 240\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"9 240\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"9 1\\r\\n\", \"output\": [\"9\"]}, {\"input\": \"9 235\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"9 236\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"5 225\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"5 226\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"4 210\\r\\n\", \"output\": [\"3\"]}, {\"input\": \"4 211\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"4 191\\r\\n\", \"output\": [\"3\"]}, {\"input\": \"10 165\\r\\n\", \"output\": [\"5\"]}, {\"input\": \"10 166\\r\\n\", \"output\": [\"4\"]}, {\"input\": \"8 100\\r\\n\", \"output\": [\"7\"]}, {\"input\": \"8 101\\r\\n\", \"output\": [\"6\"]}, {\"input\": \"8 60\\r\\n\", \"output\": [\"8\"]}, {\"input\": \"8 61\\r\\n\", \"output\": [\"7\"]}, {\"input\": \"10 15\\r\\n\", \"output\": [\"9\"]}, {\"input\": \"10 16\\r\\n\", \"output\": [\"8\"]}, {\"input\": \"4 100\\r\\n\", \"output\": [\"4\"]}, {\"input\": \"4 101\\r\\n\", \"output\": [\"4\"]}, {\"input\": \"7 167\\r\\n\", \"output\": [\"4\"]}, {\"input\": \"10 164\\r\\n\", \"output\": [\"5\"]}, {\"input\": \"9 170\\r\\n\", \"output\": [\"4\"]}, {\"input\": \"8 160\\r\\n\", \"output\": [\"5\"]}, {\"input\": \"1 100\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"8 123\\r\\n\", \"output\": [\"6\"]}, {\"input\": \"2 99\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"10 88\\r\\n\", \"output\": [\"7\"]}, {\"input\": \"1 235\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"4 240\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"1 55\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"3 240\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"2 240\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"2 236\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"10 2\\r\\n\", \"output\": [\"9\"]}, {\"input\": \"3 239\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"1 237\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"7 8\\r\\n\", \"output\": [\"7\"]}, {\"input\": \"10 235\\r\\n\", \"output\": [\"1\"]}]"
+  }
+}

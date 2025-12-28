@@ -1,0 +1,33 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import java.util.*;\nimport java.io.*;\nimport java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\nimport java.util.StringTokenizer;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        final int m = 998244353;\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st;\n\n        int[] fibo = new int[200003];\n        fibo[0] = 1;\n        fibo[1] = 1;\n        for (int i = 2; i < 200003; i++) {\n            fibo[i] = (fibo[i - 1] + fibo[i - 2]) % m;\n        }\n\n        int n = Integer.parseInt(br.readLine().trim());\n        int deno = 1 << n;\n        int inv = modPow(deno, m - 2, m);\n        int ans = (int) ((long) fibo[n - 1] * inv % m);\n        System.out.println(ans);\n    }\n\n    private static int modPow(int base, int exp, int mod) {\n        long result = 1;\n        long b = base;\n        while (exp > 0) {\n            if ((exp & 1) == 1) {\n                result = (result * b) % mod;\n            }\n            b = (b * b) % mod;\n            exp >>= 1;\n        }\n        return (int) result;\n    }\n}"
+        }
+      },
+      {
+        "message": {
+          "content": "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        final int m = 998244353;\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\n        int[] fibo = new int[200003];\n        fibo[0] = 1;\n        fibo[1] = 1;\n        for (int i = 2; i < 200003; i++) {\n            fibo[i] = (fibo[i - 1] + fibo[i - 2]) % m;\n        }\n\n        int n = Integer.parseInt(br.readLine().trim());\n        int deno = 1 << n;\n        int inv = modPow(deno, m - 2, m);\n        int ans = (int) ((long) fibo[n] * inv % m);\n        System.out.println(ans);\n    }\n\n    private static int modPow(int base, int exp, int mod) {\n        long result = 1;\n        long b = base;\n        while (exp > 0) {\n            if ((exp & 1) == 1) {\n                result = (result * b) % mod;\n            }\n            b = (b * b) % mod;\n            exp >>= 1;\n        }\n        return (int) result;\n    }\n}"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Python 3",
+    "source_code": "import math\nimport sys\nm=998244353\ninput=sys.stdin.readline\n\nfibo=[1,1]\nfor i in range(200002):\n    fibo.append(fibo[-1]+fibo[-2])\n    fibo[-1]%=m\n\nn=int(input())\ndeno=1<<n\ninv=pow(deno,m-2,m)\nans=(fibo[n-1]*inv)%m\nprint(ans)\n    \n            \n    \n        \n\n    \n    \n        \n    \n\n    \n    \n\n\n",
+    "lang_cluster": "Python",
+    "tags": [
+      "math",
+      "dp",
+      "combinatorics"
+    ],
+    "code_uid": "21c199e6a18a5869cfdf1c25de9f992f",
+    "src_uid": "cec37432956bb0a1ce62a0188fe2d805",
+    "difficulty": 1600.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Java",
+    "hidden_unit_tests": "[{\"input\": \"2\\r\\n\", \"output\": [\"748683265\"]}, {\"input\": \"3\\r\\n\", \"output\": [\"748683265\"]}, {\"input\": \"5\\r\\n\", \"output\": [\"842268673\"]}, {\"input\": \"200000\\r\\n\", \"output\": [\"202370013\"]}, {\"input\": \"6\\r\\n\", \"output\": [\"873463809\"]}, {\"input\": \"1\\r\\n\", \"output\": [\"499122177\"]}, {\"input\": \"4\\r\\n\", \"output\": [\"811073537\"]}, {\"input\": \"7\\r\\n\", \"output\": [\"896860161\"]}, {\"input\": \"13\\r\\n\", \"output\": [\"969851905\"]}, {\"input\": \"42\\r\\n\", \"output\": [\"708668919\"]}, {\"input\": \"69\\r\\n\", \"output\": [\"342983896\"]}, {\"input\": \"1337\\r\\n\", \"output\": [\"843775535\"]}, {\"input\": \"199999\\r\\n\", \"output\": [\"503231359\"]}, {\"input\": \"199998\\r\\n\", \"output\": [\"801261687\"]}]"
+  }
+}

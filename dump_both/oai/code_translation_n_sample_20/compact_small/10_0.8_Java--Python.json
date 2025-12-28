@@ -1,0 +1,32 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import sys\nsys.setrecursionlimit(10**6)\n\ndef main():\n    input = sys.stdin.read\n    data = input().split()\n    n = int(data[0])\n    k = int(data[1])\n    \n    memo = [[-1] * 255 for _ in range(55)]\n    \n    def dp(index, sum):\n        if index == n and sum == k:\n            return 0\n        if sum > k:\n            return 1 << 29\n        if index == n:\n            return 1 << 29\n        if memo[index][sum] != -1:\n            return memo[index][sum]\n        res = 1 << 28\n        for i in range(2, 6):\n            res = min(res, (1 if i == 2 else 0) + dp(index + 1, sum + i))\n        memo[index][sum] = res\n        return res\n    \n    result = dp(0, 0)\n    sys.stdout.write(f\"{result}\\n\")\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      },
+      {
+        "message": {
+          "content": "import sys\nsys.setrecursionlimit(10**6)\n\ndef main():\n    input = sys.stdin.read\n    data = input().split()\n    n = int(data[0])\n    k = int(data[1])\n    \n    memo = [[-1] * (k + 1) for _ in range(n + 1)]\n    \n    def dp(index, sum):\n        if index == n:\n            return 0 if sum == k else 1 << 29\n        if sum > k:\n            return 1 << 29\n        if memo[index][sum] != -1:\n            return memo[index][sum]\n        res = 1 << 28\n        for i in range(2, 6):\n            res = min(res, (1 if i == 2 else 0) + dp(index + 1, sum + i))\n        memo[index][sum] = res\n        return res\n    \n    result = dp(0, 0)\n    sys.stdout.write(f\"{result}\\n\")\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Java 6",
+    "source_code": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.io.PrintWriter;\nimport java.math.BigInteger;\nimport java.util.*;\n\npublic class A {\n\n    int n, k;\n    int[][] memo;\n    \n    private int dp(int index, int sum) {\n        if (index == n && sum == k)\n            return 0;\n        if (sum > k)\n            return 1 << 29;\n        if (index == n)\n            return 1 << 29;\n        if (memo[index][sum] != -1)\n            return memo[index][sum];\n        int res = 1 << 28;\n        for (int i = 2; i <= 5; i++) {\n            res = Math.min(res, ((i == 2) ? 1 : 0) + dp(index + 1, sum + i));\n        }\n        return memo[index][sum] = res;\n    }\n\n    private void solve() throws IOException {\n        memo = new int[55][255];\n        for (int[] a : memo) Arrays.fill(a, -1);\n        n = nextInt();\n        k = nextInt();\n        pl(dp(0, 0));\n    }\n\n    public static void main(String[] args) {\n        new A().run();\n    }\n\n    BufferedReader reader;\n    StringTokenizer tokenizer;\n    PrintWriter writer;\n\n    public void run() {\n        try {\n            reader = new BufferedReader(new InputStreamReader(System.in));\n            tokenizer = null;\n            writer = new PrintWriter(System.out);\n            solve();\n            reader.close();\n            writer.close();\n        } catch (Exception e) {\n            e.printStackTrace();\n            System.exit(1);\n        }\n    }\n\n    int nextInt() throws IOException {\n        return Integer.parseInt(nextToken());\n    }\n\n    long nextLong() throws IOException {\n        return Long.parseLong(nextToken());\n    }\n\n    double nextDouble() throws IOException {\n        return Double.parseDouble(nextToken());\n    }\n\n    BigInteger nextBigInteger() throws IOException {\n        return new BigInteger(nextToken());\n    }\n\n    String nextToken() throws IOException {\n        while (tokenizer == null || !tokenizer.hasMoreTokens()) {\n            tokenizer = new StringTokenizer(reader.readLine());\n        }\n        return tokenizer.nextToken();\n    }\n\n    void p(Object... objects) {\n        for (int i = 0; i < objects.length; i++) {\n            if (i != 0)\n                writer.print(' ');\n            writer.flush();\n            writer.print(objects[i]);\n            writer.flush();\n        }\n    }\n\n    void pl(Object... objects) {\n        p(objects);\n        writer.flush();\n        writer.println();\n        writer.flush();\n    }\n\n    int cc;\n\n    void pf() {\n        writer.printf(\"Case #%d: \", ++cc);\n        writer.flush();\n    }\n\n}\n",
+    "lang_cluster": "Java",
+    "tags": [
+      "math",
+      "implementation"
+    ],
+    "code_uid": "ed41da3de3c85281052fc7d836db90db",
+    "src_uid": "5a5e46042c3f18529a03cb5c868df7e8",
+    "difficulty": 900.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Python",
+    "hidden_unit_tests": "[{\"input\": \"4 8\\r\\n\", \"output\": [\"4\"]}, {\"input\": \"4 10\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"1 3\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"1 2\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"4 9\\r\\n\", \"output\": [\"3\"]}, {\"input\": \"50 234\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"50 100\\r\\n\", \"output\": [\"50\"]}, {\"input\": \"50 250\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"29 116\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"20 69\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"46 127\\r\\n\", \"output\": [\"11\"]}, {\"input\": \"3 7\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"36 99\\r\\n\", \"output\": [\"9\"]}, {\"input\": \"45 104\\r\\n\", \"output\": [\"31\"]}, {\"input\": \"13 57\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"25 106\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"8 19\\r\\n\", \"output\": [\"5\"]}, {\"input\": \"13 32\\r\\n\", \"output\": [\"7\"]}, {\"input\": \"47 128\\r\\n\", \"output\": [\"13\"]}, {\"input\": \"17 73\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"16 70\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"1 5\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"38 137\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"7 20\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"36 155\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"5 15\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"27 75\\r\\n\", \"output\": [\"6\"]}, {\"input\": \"21 73\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"2 5\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"49 177\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"44 173\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"49 219\\r\\n\", \"output\": [\"0\"]}, {\"input\": \"10 28\\r\\n\", \"output\": [\"2\"]}]"
+  }
+}

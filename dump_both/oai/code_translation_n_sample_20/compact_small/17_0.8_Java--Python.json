@@ -1,0 +1,31 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    n = int(sys.stdin.readline())\n    part = 1 + (n-3)*3 + (n-4)*(n-3)\n    p(part)\n\ndef p(str):\n    sys.stdout.write(str.__str__() + '\\n')\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      },
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    n = int(sys.stdin.readline().strip())\n    part = 1 + (n-3)*3 + (n-4)*(n-3)\n    p(part)\n\ndef p(value):\n    sys.stdout.write(str(value) + '\\n')\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Java 7",
+    "source_code": "import java.util.*;\n\npublic class Main {\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long n = in.nextLong();\n        long part = 1 + (n-3)*3 + (n-4)*(n-3);\n        p(part);\n    }\n\n    static void p(Object str){\n        System.out.println(str);\n    }\n}\n",
+    "lang_cluster": "Java",
+    "tags": [
+      "math"
+    ],
+    "code_uid": "f3a5dca82a33046e62c83ff6af95d730",
+    "src_uid": "efa8e7901a3084d34cfb1a6b18067f2b",
+    "difficulty": 1100.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Python",
+    "hidden_unit_tests": "[{\"input\": \"5\\r\\n\", \"output\": [\"9\"]}, {\"input\": \"3\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"54321\\r\\n\", \"output\": [\"2950553761\"]}, {\"input\": \"4\\r\\n\", \"output\": [\"4\"]}, {\"input\": \"6\\r\\n\", \"output\": [\"16\"]}, {\"input\": \"7\\r\\n\", \"output\": [\"25\"]}, {\"input\": \"8\\r\\n\", \"output\": [\"36\"]}, {\"input\": \"9\\r\\n\", \"output\": [\"49\"]}, {\"input\": \"10\\r\\n\", \"output\": [\"64\"]}, {\"input\": \"54320\\r\\n\", \"output\": [\"2950445124\"]}, {\"input\": \"54319\\r\\n\", \"output\": [\"2950336489\"]}, {\"input\": \"54318\\r\\n\", \"output\": [\"2950227856\"]}, {\"input\": \"54317\\r\\n\", \"output\": [\"2950119225\"]}, {\"input\": \"54316\\r\\n\", \"output\": [\"2950010596\"]}, {\"input\": \"54315\\r\\n\", \"output\": [\"2949901969\"]}, {\"input\": \"54314\\r\\n\", \"output\": [\"2949793344\"]}, {\"input\": \"8153\\r\\n\", \"output\": [\"66438801\"]}, {\"input\": \"51689\\r\\n\", \"output\": [\"2671545969\"]}, {\"input\": \"16659\\r\\n\", \"output\": [\"277455649\"]}, {\"input\": \"47389\\r\\n\", \"output\": [\"2245527769\"]}, {\"input\": \"314\\r\\n\", \"output\": [\"97344\"]}, {\"input\": \"23481\\r\\n\", \"output\": [\"551263441\"]}, {\"input\": \"20380\\r\\n\", \"output\": [\"415262884\"]}, {\"input\": \"1994\\r\\n\", \"output\": [\"3968064\"]}]"
+  }
+}

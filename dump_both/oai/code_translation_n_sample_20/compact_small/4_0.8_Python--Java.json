@@ -1,0 +1,31 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import java.util.*;\nimport java.io.*;\nimport java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\nimport java.util.StringTokenizer;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int x1 = Integer.parseInt(st.nextToken());\n        int y1 = Integer.parseInt(st.nextToken());\n        int x2 = Integer.parseInt(st.nextToken());\n        int y2 = Integer.parseInt(st.nextToken());\n        \n        int result = ((y2 - y1) / 2 + 1) * (x2 - x1 + 1) - (x2 - x1) / 2;\n        System.out.println(result);\n    }\n}"
+        }
+      },
+      {
+        "message": {
+          "content": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int x1 = Integer.parseInt(st.nextToken());\n        int y1 = Integer.parseInt(st.nextToken());\n        int x2 = Integer.parseInt(st.nextToken());\n        int y2 = Integer.parseInt(st.nextToken());\n        \n        int result = ((y2 - y1 + 1) / 2) * (x2 - x1 + 1) + ((y2 - y1 + 1) % 2) * ((x2 - x1 + 1) / 2);\n        System.out.println(result);\n    }\n}"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Python 2",
+    "source_code": "x1, y1, x2, y2 = map(int, raw_input().split())\nprint ((y2 - y1) / 2 + 1) * (x2 - x1 + 1) - (x2 - x1) / 2\n",
+    "lang_cluster": "Python",
+    "tags": [
+      "math"
+    ],
+    "code_uid": "efb1e69667c7e904e83c401b956544b1",
+    "src_uid": "00cffd273df24d1676acbbfd9a39630d",
+    "difficulty": 1900.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Java",
+    "hidden_unit_tests": "[{\"input\": \"1 1 5 5\\r\\n\", \"output\": [\"13\"]}, {\"input\": \"-1 -3 1 3\\r\\n\", \"output\": [\"11\"]}, {\"input\": \"-2 -2 2 2\\r\\n\", \"output\": [\"13\"]}, {\"input\": \"0 0 2 2\\r\\n\", \"output\": [\"5\"]}, {\"input\": \"0 0 2 0\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"0 0 0 0\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"0 -2 0 2\\r\\n\", \"output\": [\"3\"]}, {\"input\": \"-2 -2 -2 0\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"-1000000000 -1000000000 1000000000 1000000000\\r\\n\", \"output\": [\"2000000002000000001\"]}, {\"input\": \"-999999999 -999999999 999999999 999999999\\r\\n\", \"output\": [\"1999999998000000001\"]}, {\"input\": \"-999999999 -999999999 -1 -1\\r\\n\", \"output\": [\"499999999000000001\"]}, {\"input\": \"-411495869 33834653 -234317741 925065545\\r\\n\", \"output\": [\"78953311064369599\"]}, {\"input\": \"-946749893 -687257665 -539044455 -443568671\\r\\n\", \"output\": [\"49676664342971903\"]}, {\"input\": \"-471257905 -685885153 782342299 909511043\\r\\n\", \"output\": [\"999994499807710193\"]}, {\"input\": \"-26644507 -867720841 975594569 264730225\\r\\n\", \"output\": [\"567493356068872580\"]}, {\"input\": \"-537640548 -254017710 62355638 588691834\\r\\n\", \"output\": [\"252811256874252458\"]}, {\"input\": \"309857887 -687373065 663986893 403321751\\r\\n\", \"output\": [\"193123336242128360\"]}, {\"input\": \"-482406510 -512306894 412844236 -168036050\\r\\n\", \"output\": [\"154104365578285608\"]}, {\"input\": \"-330513944 -970064382 500608496 369852884\\r\\n\", \"output\": [\"556817654843544374\"]}, {\"input\": \"-157778763 218978791 976692563 591093087\\r\\n\", \"output\": [\"211076500156631060\"]}, {\"input\": \"1000000000 1000000000 1000000000 1000000000\\r\\n\", \"output\": [\"1\"]}, {\"input\": \"1 0 5 6\\r\\n\", \"output\": [\"18\"]}, {\"input\": \"-1 -4 1 4\\r\\n\", \"output\": [\"14\"]}, {\"input\": \"-2 -3 2 3\\r\\n\", \"output\": [\"18\"]}, {\"input\": \"0 -1 2 3\\r\\n\", \"output\": [\"8\"]}, {\"input\": \"0 -1 2 1\\r\\n\", \"output\": [\"5\"]}, {\"input\": \"0 -1 0 1\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"0 -3 0 3\\r\\n\", \"output\": [\"4\"]}, {\"input\": \"-2 -3 -2 1\\r\\n\", \"output\": [\"3\"]}, {\"input\": \"-1000000000 -999999999 1000000000 999999999\\r\\n\", \"output\": [\"2000000000000000000\"]}, {\"input\": \"-999999999 -1000000000 999999999 1000000000\\r\\n\", \"output\": [\"2000000000000000000\"]}, {\"input\": \"-999999999 -1000000000 -1 0\\r\\n\", \"output\": [\"500000000000000000\"]}, {\"input\": \"-411495869 33834652 -234317741 925065546\\r\\n\", \"output\": [\"78953311241547728\"]}, {\"input\": \"-946749893 -687257666 -539044455 -443568670\\r\\n\", \"output\": [\"49676664750677342\"]}, {\"input\": \"-471257905 -685885154 782342299 909511044\\r\\n\", \"output\": [\"999994501061310398\"]}, {\"input\": \"-26644507 -867720842 975594569 264730226\\r\\n\", \"output\": [\"567493357071111657\"]}, {\"input\": \"-537640548 -254017711 62355638 588691835\\r\\n\", \"output\": [\"252811257474248645\"]}, {\"input\": \"309857887 -687373066 663986893 403321752\\r\\n\", \"output\": [\"193123336596257367\"]}, {\"input\": \"-482406510 -512306895 412844236 -168036049\\r\\n\", \"output\": [\"154104366473536355\"]}, {\"input\": \"-330513944 -970064383 500608496 369852885\\r\\n\", \"output\": [\"556817655674666815\"]}, {\"input\": \"-157778763 218978790 976692563 591093088\\r\\n\", \"output\": [\"211076501291102387\"]}, {\"input\": \"1000000000 999999999 1000000000 999999999\\r\\n\", \"output\": [\"1\"]}]"
+  }
+}

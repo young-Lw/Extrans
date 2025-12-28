@@ -1,0 +1,31 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import java.util.*;\nimport java.io.*;\nimport java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\nimport java.util.StringTokenizer;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(reader.readLine().trim());\n        String s = reader.readLine().trim();\n        StringBuilder ans = new StringBuilder();\n        int i = 0, k = 1;\n        while (i < n) {\n            ans.append(s.charAt(i));\n            i += k;\n            k++;\n        }\n        System.out.println(ans.toString());\n    }\n}"
+        }
+      },
+      {
+        "message": {
+          "content": "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(reader.readLine().trim());\n        String s = reader.readLine().trim();\n        StringBuilder ans = new StringBuilder();\n        int i = 0, k = 1;\n        while (i < n) {\n            ans.append(s.charAt(i));\n            i += k;\n            k++;\n        }\n        System.out.println(ans);\n    }\n}"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Python 3",
+    "source_code": "n=int(input())\ns=input()\nans,i,k='',0,1\nwhile i<n:\n    ans+=s[i]\n    i,k=i+k,k+1\nprint(ans)\n",
+    "lang_cluster": "Python",
+    "tags": [
+      "implementation"
+    ],
+    "code_uid": "4737ecb3e13f71ecce2eade6f86c4167",
+    "src_uid": "08e8c0c37b223f6aae01d5609facdeaf",
+    "difficulty": 800.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Java",
+    "hidden_unit_tests": "[{\"input\": \"6\\r\\nbaabbb\\r\\n\", \"output\": [\"bab\\n\", \"bab\", \"bab\\r\\n\"]}, {\"input\": \"10\\r\\nooopppssss\\r\\n\", \"output\": [\"oops\\r\\n\", \"oops\\n\", \"oops\"]}, {\"input\": \"1\\r\\nz\\r\\n\", \"output\": [\"z\\n\", \"z\", \"z\\r\\n\"]}, {\"input\": \"3\\r\\nzww\\r\\n\", \"output\": [\"zw\", \"zw\\n\", \"zw\\r\\n\"]}, {\"input\": \"55\\r\\ncooooonnnnttttteeeeeeeeeeeeessssssssttttttttttttttttttt\\r\\n\", \"output\": [\"coonteestt\\r\\n\", \"coonteestt\", \"coonteestt\\n\"]}, {\"input\": \"21\\r\\ncoodddeeeecccccoooooo\\r\\n\", \"output\": [\"codeco\", \"codeco\\r\\n\", \"codeco\\n\"]}, {\"input\": \"55\\r\\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\r\\n\", \"output\": [\"aaaaaaaaaa\\r\\n\", \"aaaaaaaaaa\\n\", \"aaaaaaaaaa\"]}, {\"input\": \"36\\r\\nabbcccddddeeeeeffffffggggggghhhhhhhh\\r\\n\", \"output\": [\"abcdefgh\\n\", \"abcdefgh\\r\\n\", \"abcdefgh\"]}]"
+  }
+}

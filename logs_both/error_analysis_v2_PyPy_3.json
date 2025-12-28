@@ -1,0 +1,15 @@
+{
+  "target": "PyPy 3",
+  "total_errors": 5,
+  "counts": {
+    "Type Error": 3,
+    "Compilation Error": 1,
+    "Semantic Understanding Error": 1
+  },
+  "percentages": {
+    "Type Error": 60.0,
+    "Compilation Error": 20.0,
+    "Semantic Understanding Error": 20.0
+  },
+  "eval_path": "/mnt/d/文件/笔记/unsw/2025T3/COMP9900/测试/EXtrans/dump_both/oai/code_translation_n_sample_20/compact_small/eval_code_translation_compact_small_execeval/PyPy 3.jsonl"
+}

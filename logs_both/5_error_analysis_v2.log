@@ -1,0 +1,12 @@
+== Java 17 ==
+Semantic Understanding Error :     9 ( 81.82%)
+Index Error        :     1 (  9.09%)
+Type Error         :     1 (  9.09%)
+TOTAL_ERRORS: 11
+Summary written -> logs_both/error_analysis_v2_Java_17.json
+== PyPy 3 ==
+Type Error         :     3 ( 60.00%)
+Compilation Error  :     1 ( 20.00%)
+Semantic Understanding Error :     1 ( 20.00%)
+TOTAL_ERRORS: 5
+Summary written -> logs_both/error_analysis_v2_PyPy_3.json

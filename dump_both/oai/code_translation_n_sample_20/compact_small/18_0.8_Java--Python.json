@@ -1,0 +1,34 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    input = sys.stdin.readline\n    a, b = map(int, input().split())\n    if a == 0 and b == 0:\n        sys.stdout.write(\"NO\")\n    else:\n        if a == b or a - b == 1 or a - b == -1:\n            sys.stdout.write(\"YES\")\n        else:\n            sys.stdout.write(\"NO\")\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      },
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    input = sys.stdin.readline\n    a, b = map(int, input().split())\n    if a == 0 and b == 0:\n        sys.stdout.write(\"NO\\n\")\n    else:\n        if a == b or abs(a - b) == 1:\n            sys.stdout.write(\"YES\\n\")\n        else:\n            sys.stdout.write(\"NO\\n\")\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Java 8",
+    "source_code": "import java.util.*;\npublic class DashaandStairs {\n\n    public static void main(String[]args){\n       Scanner sc=new Scanner(System.in);\n       int a=sc.nextInt();int b=sc.nextInt();\n       if(a==0 && b==0)\n           System.out.print(\"NO\");\n       else\n           if(a==b || a-b==1 || a-b==-1)\n                   System.out.print(\"YES\");\n            else\n            System.out.print(\"NO\");\n    }\n}",
+    "lang_cluster": "Java",
+    "tags": [
+      "brute force",
+      "math",
+      "constructive algorithms",
+      "implementation"
+    ],
+    "code_uid": "ade6f1b81c901928320f711d5cd5c8e6",
+    "src_uid": "ec5e3b3f5ee6a13eaf01b9a9a66ff037",
+    "difficulty": 1000.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Python",
+    "hidden_unit_tests": "[{\"input\": \"2 3\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"3 1\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"5 4\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"9 9\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"85 95\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"0 1\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"89 25\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"74 73\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"62 39\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"57 57\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"100 99\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"0 0\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"98 100\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"99 100\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"1 0\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"100 0\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"0 100\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"100 98\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"100 100\\r\\n\", \"output\": [\"YES\"]}, {\"input\": \"0 5\\r\\n\", \"output\": [\"NO\"]}, {\"input\": \"2 2\\r\\n\", \"output\": [\"YES\"]}]"
+  }
+}

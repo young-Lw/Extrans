@@ -1,0 +1,34 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    input = sys.stdin.readline\n    output = sys.stdout.write\n    \n    n = int(input().strip())\n    bad = 1\n    mod = 1000000007\n    for j in range(int(n - 1)):\n        bad *= 2\n        bad %= mod\n    prod = 1\n    for j in range(n, 0, -1):\n        prod *= j\n        prod %= mod\n    if prod - bad >= 0:\n        output(str(prod - bad) + '\\n')\n    else:\n        output(str(mod + prod - bad) + '\\n')\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      },
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    input = sys.stdin.readline\n    output = sys.stdout.write\n    \n    n = int(input().strip())\n    bad = 1\n    mod = 1000000007\n    for j in range(n - 1):\n        bad *= 2\n        bad %= mod\n    prod = 1\n    for j in range(1, n + 1):\n        prod *= j\n        prod %= mod\n    result = (prod - bad) % mod\n    output(str(result) + '\\n')\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Java 8",
+    "source_code": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.io.PrintWriter;\nimport java.util.Comparator;\nimport java.util.List;\n\npublic class CyclicPermutations { // Template for CF\n    public static class ListComparator implements Comparator<List<Integer>> {\n\n        @Override\n        public int compare(List<Integer> l1, List<Integer> l2) {\n            for (int i = 0; i < l1.size(); ++i) {\n                if (l1.get(i).compareTo(l2.get(i)) != 0) {\n                    return l1.get(i).compareTo(l2.get(i));\n                }\n            }\n            return 0;\n        }\n    }\n\n    public static class Pair {\n        int first;\n        int second;\n\n        public Pair(int first, int second) {\n            this.first = first;\n            this.second = second;\n        }\n\n        public int getFirst() {\n            return first;\n        }\n\n        public int getSecond() {\n            return second;\n        }\n\n        @Override\n        public String toString() {\n            return first + \" \" + second;\n        }\n    }\n\n    public static void main(String[] args) throws IOException {\n        // Check for int overflow!!!!\n        // Should you use a long to store the sum or smthn?\n        BufferedReader f = new BufferedReader(new InputStreamReader(System.in));\n        PrintWriter out = new PrintWriter(System.out);\n\n        long n = Integer.parseInt(f.readLine());\n        long bad = 1;\n        long mod = 1000000007;\n        for (int j = 0; j < n - 1; j++) {\n            bad *= 2;\n            bad %= mod;\n        }\n        long prod = 1;\n        for (long j = n; j > 0; j--) {\n            prod *= j;\n            prod %= mod;\n        }\n        if (prod - bad >= 0) {\n            out.println(prod - bad);\n        } else {\n            out.println(mod + prod - bad);\n        }\n        out.close();\n    }\n\n}",
+    "lang_cluster": "Java",
+    "tags": [
+      "math",
+      "dp",
+      "combinatorics",
+      "graphs"
+    ],
+    "code_uid": "71892c88f54e862b73e338a2a8d0a4f7",
+    "src_uid": "3dc1ee09016a25421ae371fa8005fce1",
+    "difficulty": 1500.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Python",
+    "hidden_unit_tests": "[{\"input\": \"4\\r\\n\", \"output\": [\"16\"]}, {\"input\": \"583291\\r\\n\", \"output\": [\"135712853\"]}, {\"input\": \"3\\r\\n\", \"output\": [\"2\"]}, {\"input\": \"1000000\\r\\n\", \"output\": [\"23581336\"]}, {\"input\": \"66\\r\\n\", \"output\": [\"257415584\"]}, {\"input\": \"33\\r\\n\", \"output\": [\"762187807\"]}, {\"input\": \"336161\\r\\n\", \"output\": [\"234634596\"]}, {\"input\": \"885131\\r\\n\", \"output\": [\"329995454\"]}, {\"input\": \"482331\\r\\n\", \"output\": [\"722928541\"]}, {\"input\": \"79531\\r\\n\", \"output\": [\"162141608\"]}, {\"input\": \"652615\\r\\n\", \"output\": [\"960319213\"]}, {\"input\": \"768208\\r\\n\", \"output\": [\"635322133\"]}]"
+  }
+}

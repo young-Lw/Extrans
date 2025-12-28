@@ -1,0 +1,31 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import java.util.*;\nimport java.io.*;\nimport java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\nimport java.util.StringTokenizer;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer tokenizer = new StringTokenizer(reader.readLine());\n        int n = Integer.parseInt(tokenizer.nextToken());\n        String str1 = reader.readLine();\n        StringBuilder r = new StringBuilder();\n        int s = 0;\n        for (int i = 1; i <= n; i++) {\n            r.append(str1.charAt(s));\n            s += i;\n        }\n        System.out.println(r.toString());\n    }\n}"
+        }
+      },
+      {
+        "message": {
+          "content": "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(reader.readLine().trim());\n        String str1 = reader.readLine().trim();\n        StringBuilder r = new StringBuilder();\n        int s = 0;\n        for (int i = 1; i <= n && s < str1.length(); i++) {\n            r.append(str1.charAt(s));\n            s += i;\n        }\n        System.out.println(r.toString());\n    }\n}"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Python 2",
+    "source_code": "n = input()\nstr1 = raw_input()\ns = 0\nr = ''\nfor i in range(1, n+1):\n    r += str1[s:s+1]\n    s += i\nprint r\n",
+    "lang_cluster": "Python",
+    "tags": [
+      "implementation"
+    ],
+    "code_uid": "2ec545d228681fc44269cda43631fea1",
+    "src_uid": "08e8c0c37b223f6aae01d5609facdeaf",
+    "difficulty": 800.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Java",
+    "hidden_unit_tests": "[{\"input\": \"6\\r\\nbaabbb\\r\\n\", \"output\": [\"bab\\n\", \"bab\", \"bab\\r\\n\"]}, {\"input\": \"10\\r\\nooopppssss\\r\\n\", \"output\": [\"oops\\r\\n\", \"oops\\n\", \"oops\"]}, {\"input\": \"1\\r\\nz\\r\\n\", \"output\": [\"z\\n\", \"z\", \"z\\r\\n\"]}, {\"input\": \"3\\r\\nzww\\r\\n\", \"output\": [\"zw\", \"zw\\n\", \"zw\\r\\n\"]}, {\"input\": \"55\\r\\ncooooonnnnttttteeeeeeeeeeeeessssssssttttttttttttttttttt\\r\\n\", \"output\": [\"coonteestt\\r\\n\", \"coonteestt\", \"coonteestt\\n\"]}, {\"input\": \"21\\r\\ncoodddeeeecccccoooooo\\r\\n\", \"output\": [\"codeco\", \"codeco\\r\\n\", \"codeco\\n\"]}, {\"input\": \"55\\r\\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\r\\n\", \"output\": [\"aaaaaaaaaa\\r\\n\", \"aaaaaaaaaa\\n\", \"aaaaaaaaaa\"]}, {\"input\": \"36\\r\\nabbcccddddeeeeeffffffggggggghhhhhhhh\\r\\n\", \"output\": [\"abcdefgh\\n\", \"abcdefgh\\r\\n\", \"abcdefgh\"]}]"
+  }
+}

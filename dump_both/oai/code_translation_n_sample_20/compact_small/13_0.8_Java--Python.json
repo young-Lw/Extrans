@@ -1,0 +1,32 @@
+{
+  "oai_response": {
+    "choices": [
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    input = sys.stdin.read\n    data = input().split()\n    index = 0\n    t = int(data[index])\n    index += 1\n    results = []\n    while t > 0:\n        t -= 1\n        n = int(data[index])\n        index += 1\n        num = str(n)\n        n = n % 10\n        sum = 0\n        for i in range(1, n):\n            sum += 10\n        for i in range(1, len(num) + 1):\n            sum += i\n        results.append(str(sum))\n    sys.stdout.write(\"\\n\".join(results) + \"\\n\")\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      },
+      {
+        "message": {
+          "content": "import sys\n\ndef main():\n    input = sys.stdin.read\n    data = input().split()\n    index = 0\n    t = int(data[index])\n    index += 1\n    results = []\n    while t > 0:\n        t -= 1\n        n = int(data[index])\n        index += 1\n        num = str(n)\n        last_digit = int(num[-1])\n        sum = 0\n        sum += (last_digit - 1) * 10\n        sum += len(num) * (len(num) + 1) // 2\n        results.append(str(sum))\n    sys.stdout.write(\"\\n\".join(results) + \"\\n\")\n\nif __name__ == \"__main__\":\n    main()"
+        }
+      }
+    ],
+    "prompt": ""
+  },
+  "source_data": {
+    "lang": "Java 8",
+    "source_code": "import java.util.*;\n\npublic class main {\n\tpublic static void main(String[] all) {\n\t\tScanner input = new Scanner(System.in);\n\t\tint t = input.nextInt();\n\t\twhile (t-- > 0) {\n\t\t\tint n = input.nextInt();\n\t\t\tString num = \"\"+n;\n\t\t\tn = n % 10;\n\t\t\tint sum = 0;\n\t\t\tfor (int i = 1; i < n; i++) sum += 10;\n\t\t\tfor (int i = 1; i < num.length()+1; i++) sum += i;\n\t\t\tSystem.out.println(sum);\n\t\t}\n\t\tinput.close();\n\t}\n}",
+    "lang_cluster": "Java",
+    "tags": [
+      "math",
+      "implementation"
+    ],
+    "code_uid": "7d187626cee8c001964570729283d6fa",
+    "src_uid": "289a55128be89bb86a002d218d31b57f",
+    "difficulty": 800.0,
+    "exec_outcome": "PASSED",
+    "target_lang": "Python",
+    "hidden_unit_tests": "[{\"input\": \"4\\r\\n22\\r\\n9999\\r\\n1\\r\\n777\\r\\n\", \"output\": [\"13\\n90\\n1\\n66\", \"13\\r\\n90\\r\\n1\\r\\n66\"]}, {\"input\": \"36\\r\\n1\\r\\n2\\r\\n3\\r\\n4\\r\\n5\\r\\n6\\r\\n7\\r\\n8\\r\\n9\\r\\n11\\r\\n22\\r\\n33\\r\\n44\\r\\n55\\r\\n66\\r\\n77\\r\\n88\\r\\n99\\r\\n111\\r\\n222\\r\\n333\\r\\n444\\r\\n555\\r\\n666\\r\\n777\\r\\n888\\r\\n999\\r\\n1111\\r\\n2222\\r\\n3333\\r\\n4444\\r\\n5555\\r\\n6666\\r\\n7777\\r\\n8888\\r\\n9999\\r\\n\", \"output\": [\"1\\r\\n11\\r\\n21\\r\\n31\\r\\n41\\r\\n51\\r\\n61\\r\\n71\\r\\n81\\r\\n3\\r\\n13\\r\\n23\\r\\n33\\r\\n43\\r\\n53\\r\\n63\\r\\n73\\r\\n83\\r\\n6\\r\\n16\\r\\n26\\r\\n36\\r\\n46\\r\\n56\\r\\n66\\r\\n76\\r\\n86\\r\\n10\\r\\n20\\r\\n30\\r\\n40\\r\\n50\\r\\n60\\r\\n70\\r\\n80\\r\\n90\", \"1\\n11\\n21\\n31\\n41\\n51\\n61\\n71\\n81\\n3\\n13\\n23\\n33\\n43\\n53\\n63\\n73\\n83\\n6\\n16\\n26\\n36\\n46\\n56\\n66\\n76\\n86\\n10\\n20\\n30\\n40\\n50\\n60\\n70\\n80\\n90\"]}, {\"input\": \"36\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n9999\\r\\n\", \"output\": [\"90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\\n90\", \"90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\\r\\n90\"]}, {\"input\": \"20\\r\\n999\\r\\n33\\r\\n2222\\r\\n22\\r\\n2222\\r\\n333\\r\\n4\\r\\n99\\r\\n11\\r\\n444\\r\\n8888\\r\\n444\\r\\n2222\\r\\n6666\\r\\n666\\r\\n7\\r\\n555\\r\\n5\\r\\n8\\r\\n9999\\r\\n\", \"output\": [\"86\\n23\\n20\\n13\\n20\\n26\\n31\\n83\\n3\\n36\\n80\\n36\\n20\\n60\\n56\\n61\\n46\\n41\\n71\\n90\", \"86\\r\\n23\\r\\n20\\r\\n13\\r\\n20\\r\\n26\\r\\n31\\r\\n83\\r\\n3\\r\\n36\\r\\n80\\r\\n36\\r\\n20\\r\\n60\\r\\n56\\r\\n61\\r\\n46\\r\\n41\\r\\n71\\r\\n90\"]}]"
+  }
+}

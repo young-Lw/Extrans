@@ -1,0 +1,22 @@
+[EXtrans] Start pipeline: Python->Java, translator=gpt-4o, critic=gpt-4o, refiner=gpt-4o, nsample=1, refine_rounds=1, limit=20, test_aug=False(2), timeouts(t/c/r)=[0, 120, 120], retries(t/c/r)=[0, 2, 2]
+Python->Java:   0%|          | 0/20 [00:00<?, ?it/s]Python->Java:   5%|▌         | 1/20 [00:19<06:19, 19.95s/it]Python->Java:  10%|█         | 2/20 [00:33<04:53, 16.28s/it]Python->Java:  15%|█▌        | 3/20 [00:45<04:03, 14.35s/it]Python->Java:  20%|██        | 4/20 [00:56<03:27, 13.00s/it]Python->Java:  25%|██▌       | 5/20 [01:07<03:00, 12.06s/it]Python->Java:  30%|███       | 6/20 [01:20<02:56, 12.61s/it]Python->Java:  35%|███▌      | 7/20 [01:37<03:00, 13.92s/it]Python->Java:  40%|████      | 8/20 [01:51<02:47, 13.94s/it]Python->Java:  45%|████▌     | 9/20 [02:00<02:18, 12.61s/it]Python->Java:  50%|█████     | 10/20 [02:15<02:13, 13.33s/it]Python->Java:  55%|█████▌    | 11/20 [02:24<01:46, 11.89s/it]Python->Java:  60%|██████    | 12/20 [02:36<01:34, 11.85s/it]Python->Java:  65%|██████▌   | 13/20 [02:56<01:40, 14.41s/it]Python->Java:  70%|███████   | 14/20 [03:12<01:29, 14.97s/it]Python->Java:  75%|███████▌  | 15/20 [03:23<01:08, 13.75s/it]Python->Java:  80%|████████  | 16/20 [03:38<00:55, 13.98s/it]Python->Java:  85%|████████▌ | 17/20 [03:49<00:39, 13.01s/it]Python->Java:  90%|█████████ | 18/20 [04:02<00:26, 13.11s/it]Python->Java:  95%|█████████▌| 19/20 [04:10<00:11, 11.74s/it]Python->Java: 100%|██████████| 20/20 [04:22<00:00, 11.80s/it]Python->Java: 100%|██████████| 20/20 [04:22<00:00, 13.15s/it]
+[EXtrans] Processing 1/20: 5edb4b89998d706dc368e0519bd9b23f
+[EXtrans] Processing 1/20: f57a99b6e3fa68232a509daca5d27ebb
+[EXtrans] Processing 1/20: 17aae43066fa57167cdf2963c231811f
+[EXtrans] Processing 1/20: d43a60af126271cdab9676b0e6b5a515
+[EXtrans] Processing 1/20: efb1e69667c7e904e83c401b956544b1
+[EXtrans] Processing 1/20: 4daf5e052e91b87b952ad9becd5f1264
+[EXtrans] Processing 1/20: 79f56334a31f88e884fbde9065fbb041
+[EXtrans] Processing 1/20: 60cd84b620530eeef933c9ffb6d75d92
+[EXtrans] Processing 1/20: 7bc3ab3802e0e372d722785439cf72de
+[EXtrans] Processing 1/20: da907f50aa62717837063c35cb5b18e6
+[EXtrans] Processing 1/20: 4737ecb3e13f71ecce2eade6f86c4167
+[EXtrans] Processing 1/20: 2ec545d228681fc44269cda43631fea1
+[EXtrans] Processing 1/20: a3250ccb9d49257e1a304c7de328ca82
+[EXtrans] Processing 1/20: cc9125bab195e17904b7461524d2b2c7
+[EXtrans] Processing 1/20: e83996ba0f6741a20e3e446f433dd593
+[EXtrans] Processing 1/20: 4109f2b958132d632c3062cbdaf4de4f
+[EXtrans] Processing 1/20: e5ba5f8702002e06241ae006352b9a34
+[EXtrans] Processing 1/20: 21c199e6a18a5869cfdf1c25de9f992f
+[EXtrans] Processing 1/20: 1c8c863b3f21bd79405da603b0b90b93
+[EXtrans] Processing 1/20: 14f2fcbebe004325f3e048c145c5315a

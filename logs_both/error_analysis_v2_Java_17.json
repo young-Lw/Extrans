@@ -1,0 +1,15 @@
+{
+  "target": "Java 17",
+  "total_errors": 11,
+  "counts": {
+    "Index Error": 1,
+    "Type Error": 1,
+    "Semantic Understanding Error": 9
+  },
+  "percentages": {
+    "Index Error": 9.090909090909092,
+    "Type Error": 9.090909090909092,
+    "Semantic Understanding Error": 81.81818181818181
+  },
+  "eval_path": "/mnt/d/文件/笔记/unsw/2025T3/COMP9900/测试/EXtrans/dump_both/oai/code_translation_n_sample_20/compact_small/eval_code_translation_compact_small_execeval/Java 17.jsonl"
+}
